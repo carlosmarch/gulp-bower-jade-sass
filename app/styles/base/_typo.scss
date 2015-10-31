@@ -1,0 +1,86 @@
+/*
+TYPOGRAPHY - General
+------------------------------------------------------- */
+@font-face {
+  font-family: 'Proxima.extra';
+  font-weight: 900;
+  src: url(../font/proximanova-extrabold-webfont.eot);
+  src: url("../font/proximanova-extrabold-webfont.eot") format("eot"), url(../font/proximanova-extrabold-webfont.woff) format("woff"), url(../font/proximanova-extrabold-webfont.ttf) format("truetype"), url("../font/proximanova-extrabold-webfont.svg") format("svg"); 
+}
+
+
+body{
+	font-family: $sans-serif-font;
+}
+h1 {
+  font-size:32px;
+  line-height:40px;
+  font-weight: bold;
+  }
+h2 {
+  font-size:22px;
+  line-height:30px;
+  padding-top: 5px;
+  padding-bottom:5px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 20px;
+  }
+
+h4{
+  font-size: 16px;
+}
+
+h5{
+  font-size: 15px;
+}
+h6 {
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $montserrat;
+  color: $heading;
+  font-style: normal;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-rendering: optimizeLegibility;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  color: $subheading;
+  display: block;
+  font-weight: bolder;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-size: 12px;
+  padding-bottom: 10px;
+  /*text-transform: uppercase;*/
+}
+
+h1 small{
+  font-size: 16px;
+}
+
+p {
+  color: $subheading;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 17px;
+}
+
+
+p small {
+  font-size: 12px;
+  font-style: italic;
+}
+
+em{
+  font-style:italic;
+  letter-spacing: -0.3px;
+}
+
+strong{
+  color: $heading;
+}

@@ -1,0 +1,82 @@
+//*
+//FORMS
+//------------------------------------------------------- */
+
+form#signup, form#form-ebook, form#formDialog{
+  @include border-radius;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: #fff;
+  input:not([type=submit]), textarea {
+    color: #333;
+    background: #f7f7f7;
+    border: 2px solid #e7e7e7;
+    height: auto;
+    padding: 9px 15px 8px;
+    width: 100%;
+    font-size: 16px;
+    font-size: 1rem;
+    font-family: ApexRounded,sans-serif;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    box-shadow: none!important;
+    line-height: 1;
+    -webkit-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    -webkit-transition:background .2s ease-in-out;
+    transition:background .2s ease-in-out;
+
+  }
+  input[type=date]:focus,input[type=email]:focus,input[type=nickname]:focus,input[type=number]:focus,input[type=password]:focus,input[type=tel]:focus,input[type=text]:focus,textarea:focus{
+    background:#e7e7e7
+  }
+  ::-webkit-input-placeholder{font-weight:400;line-height:1}
+  ::-webkit-input-placeholder,::placeholder{font-weight:400;line-height:1;color:#a6a6a6}
+  :focus::-webkit-input-placeholder{color:#999}
+  :focus::-webkit-input-placeholder,:focus::placeholder{color:#999}
+}
+
+form fieldset label {
+  margin-bottom: 5px;
+}
+input[type=submit]{
+  border: none!important;
+}
+
+#signup{
+  -webkit-box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+}
+#form-ebook{
+  box-shadow: 10px 10px 0px rgba(23, 23, 23, 0.18);
+}
+
+form#formModalDialog{;
+  border-radius: 0 0 4px 4px!important;
+}
+#formModalDialog .dialog__content{
+  background: #3BB2D0;
+}
+form#formDialog{
+  border:none;
+  background:none;
+}
+form#formDialog label{
+  font-size: 14px;
+  padding: 0;
+  text-align: left;
+  color:#fff;
+}
+
+.messageNoSpam{
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 40px;
+  font-style: italic;
+  display: inline-block;
+}

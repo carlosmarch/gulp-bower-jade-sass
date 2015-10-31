@@ -1,0 +1,155 @@
+//*
+//BUTTONS
+//------------------------------------------------------- */
+@mixin solid($color) {
+    background-color: rgba( $color, 1 );
+    color: #ffffff;
+    &:hover {
+        background: rgba( $color, 0.7 );
+    }
+    &:active {
+        background: rgba( $color, 0.5 );
+    }
+
+}
+
+
+@mixin outlined($color) {
+    border: 2px solid $color;
+    background-color: rgba( $color, 0 );
+
+    &:hover {
+        background: rgba( $color, 1 );
+    }
+    &:active {
+        background: rgba( $color, 0.5 );
+    }
+
+}
+
+
+@mixin border-radius {
+    $radius:3px;
+
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+
+@mixin pill {
+    $rounded-corner-radius: 40px;
+
+    -webkit-border-radius: $rounded-corner-radius;
+    -moz-border-radius: $rounded-corner-radius;
+    -ms-border-radius: $rounded-corner-radius;
+    border-radius: $rounded-corner-radius;
+}
+
+
+
+
+.btn{
+
+    font-family: $sans-serif-font;
+    text-align: center;
+    line-height: 30px;
+    min-width: 150px;
+    padding: 8px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    cursor:pointer;
+    margin-top: 10px;
+    display: inline-block;
+
+    @include transition(all, 0.2s, ease-in-out);
+    &:hover, &:focus, &:active, &.is-active, &.active {
+        text-decoration: none;
+    }
+}
+
+.btn-rounded{
+    @extend .btn;
+    @include border-radius;
+}
+.btn-pill{
+    @extend .btn;
+    @include pill;
+}
+.btn-big{
+    width: 270px;
+    padding:  10px 35px;
+}
+.btn-mini{
+    font-size: 12px;
+    padding: 0px 0px;
+}
+
+.btn-primary{
+    @extend .btn;
+    @include solid($color_primary);
+    color: #ffffff;
+    &:hover{
+        color:#ffffff;
+    }
+}
+
+.btn-red{
+    @extend .btn;
+    @include solid($red);
+    color: #ffffff;
+    &:hover{
+        color:#ffffff;
+    }
+}
+
+
+.btn-primary-outlined{
+    @extend .btn;
+    @include outlined($color_primary);
+    color: $color_primary;
+    &:hover{
+        color:#ffffff;
+    }
+}
+
+.btn-outlined-white{
+    @extend .btn;
+    @include outlined(#ffffff);
+    color: #ffffff;
+    &:hover{
+        background: $color_primary;
+        color: #ffffff;
+        border: 2px solid $color_primary;
+        text-decoration: none
+    }
+}
+.btn-outlined-red{
+    @extend .btn;
+    @include outlined($red);
+    color: $red;
+    &:hover{
+        background: $red;
+        color: #ffffff;
+        border: 2px solid $red;
+        text-decoration: none
+    }
+}
+.btn-outlined-dark{
+    @extend .btn;
+    @include outlined($heading);
+    color: $heading;
+    &:hover{
+        background: $color_primary;
+        color: #ffffff;
+        border: 2px solid $color_primary;
+        text-decoration: none
+    }
+}
+
+.btn-arrow::after{
+    content: ' →';
+}

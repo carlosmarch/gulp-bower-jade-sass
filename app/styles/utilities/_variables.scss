@@ -1,0 +1,176 @@
+/*
+WHERE THE FUN BEGINS
+^__^
+------------------------------------------------------- */
+
+/*
+FONTS
+------------------------------------------------------- */
+$sans-serif-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif-font: Georgia, "Roboto Slab", Georgia, Times, serif;
+$montserrat: 'Proxima.extra', 'Montserrat', sans-serif;
+$proxima: 'Proxima.extra';
+/*
+COLORS
+------------------------------------------------------- */
+$hooptap_blue   : #00caff;
+$emerald        : #10a2b8;
+$color_primary  : #3bb2d0;  /*#0089c0;*/
+$deep_blue      : #006591;
+$verdiblue      : #3BB2D0;
+$purple         : #8282c2;
+$deep_purple    : #8863a2;
+$green          : #aec25c;
+$light_green    : #67ca8a;
+
+$red:         #f95f63;
+$yellow:      #f5bb3d;
+$orange:      #f79927;
+
+
+$color_white:       #ffffff;
+
+$pink:        #ef396f;
+
+$lightgrey:   #f5f5f5;
+$lightblue:   #00bad2;
+
+
+$twitter:           rgb(101, 197, 235);
+$facebook:          rgb(74, 104, 177);
+
+$heading:           #384047;
+$subheading:        #999;
+
+$bg_dark_color:     #2D2C2C;
+$bg_light_color:    rgb(234, 236, 237);//#E5E5E5;
+$bg_grey_blue:      #e1e6ea;
+
+$nav_link_color:    #ffffff;
+
+/*
+WIDTHS
+------------------------------------------------------- */
+$container: 940px;
+$header_height: 800px;
+$slider_height: 725px;
+
+/*
+Media Queries
+------------------------------------------------------- */
+//Function
+@function lower-bound($range){
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range,1);
+}
+
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
+
+// Here we define the lower and upper bounds for each media size
+$small-range: (0em, 40em); /* 0, 640px */
+$medium-range: (40.063em, 64em); /* 641px, 1024px */
+$large-range: (64.063em, 90em); /* 1025px, 1440px */
+$xlarge-range: (90.063em, 120em); /* 1441px, 1920px */
+$xxlarge-range: (120.063em); /* 1921px */
+
+// Media Queries
+$screen: "only screen" !default;
+
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "#{$screen} and (orientation: portrait)" !default;
+
+$small-up: $screen !default;
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
+
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})" !default;
+$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})" !default;
+
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})" !default;
+$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})" !default;
+
+$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})" !default;
+
+$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})" !default;
+$xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})" !default;
+
+//use
+@media #{$small-up} { }
+@media #{$small-only} { }
+
+@media #{$medium-up} { }
+@media #{$medium-only} { }
+
+@media #{$large-up} { }
+@media #{$large-only} { }
+
+@media #{$xlarge-up} { }
+@media #{$xlarge-only} { }
+
+@media #{$xxlarge-up} { }
+@media #{$xxlarge-only} { }
+
+
+/*
+TRANSITIONS
+------------------------------------------------------- */
+@mixin transition($transition-property, $transition-time, $method) {
+  //use: @include transition(all, 0.2s, ease-in-out);
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+/*
+COLOURS
+------------------------------------------------------- */
+// _config.scss
+$colors: (
+        sexy: #FA6ACC,
+        glamour: #F02A52
+);
+
+//opacify a color
+@function opacify($colour){
+  @return rgba( $colour, .7 )
+}
+
+//Generate color-x & bg-x & bg-x-50 from array of $colors
+@each $color, $colorValue in $colors {
+  .color-#{$color} {
+    color:$colorValue;
+  }
+  .bg-#{$color} {
+    background: $colorValue;
+  }
+  .bg-#{$color}-50{
+    background:opacify($colorValue);
+  }
+}
+
+
+//getColors
+@function getColor($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+// getColors DEMO
+.element {
+  background-color: getColor(sexy); // #09A6E4
+}
+.element-50 {
+  background-color: opacify(getColor(sexy)); // 50% #09A6E4
+}

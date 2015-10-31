@@ -1,0 +1,19 @@
+{
+  "name": "bower-gulp-html5-sass-jade-boilerplate",
+  "version": "0.0.0",
+  "authors": [
+    "cmarch <carlosmarchinfo@gmail.com>"
+  ],
+  "description": "Testing things",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

@@ -1,0 +1,19 @@
+/*
+SLIDES
+*----------------------------------------------------
+*----------------------------------------------------
+*/
+.ms-info{
+  min-height:500px;
+  color:#fff;
+}
+.ms-thumb-frame img{
+  border-radius:100px;
+  @include transition(all, 0.3s, ease-in);
+}
+.ms-thumb-frame-selected > img{
+  width:110px;
+  height:110px;
+  @include transition(all, 0.3s, ease-in);
+
+}

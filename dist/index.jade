@@ -1,0 +1,60 @@
+doctype html
+html
+   head
+      title bower-gulp-html5-sass-jade-boilerplate
+      meta(charset='utf-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+
+      //- inject:css
+      link(rel="stylesheet", href="/dist/css/main.min.css")
+      //- endinject
+
+      //- inject:js
+      script(src="/dist/js/main.min.js")
+      //- endinject
+
+   body
+      // Page Wrapper
+      #page-wrapper
+         // Header
+         header#header
+            h1
+               a(href='index.html')
+            nav#nav
+               ul
+                  li
+                     a.menuToggle(href='#menu')
+                        span Menu
+                     #menu
+                        ul
+                           li
+                              a(href='index.html') Inicio
+         // Banner
+         section#banner
+            .inner
+               h2
+               p Test
+
+         // One
+         section#one
+            .inner
+               header
+                  h2 Test 1
+         // Two
+         section#two
+            .inner
+               header
+                  h2 Test 2
+
+         // Footer
+         footer#footer
+            ul.icons
+               li
+                  a.icon.fa-twitter(href='https://twitter.com/carlosmarch__', target='_blank')
+                     span.label Twitter
+                  a.icon.fa-envelope-o(href='mailto: carlosmarchinfo@gmail.com')
+                     span.label Email
+            ul.copyright
+               li @
+
