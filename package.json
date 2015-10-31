@@ -1,9 +1,13 @@
 {
-  "name": "Test",
+  "name": "gulp-bower-jade-sass",
   "version": "1.0.0",
-  "description": "Test",
+  "description": "Skeleton using gulp bower jade & sass",
   "main": "gulpfile.js",
   "author": "Carlos March <carlosmarchinfo@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/recortex/gulp-bower-jade-sass"
+  }
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-install": "^0.6.0",

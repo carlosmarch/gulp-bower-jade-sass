@@ -66,7 +66,10 @@ gulp.task('inject-files', ['styles', 'scripts', 'templates'], function () {
 
 
 /* START  GULP */
-gulp.task('default', ['inject-files', 'templates'], function() {
+gulp.task('build', ['inject-files', 'templates'], function() {
 
 });
 
+gulp.task('default', ['build'], function() {
+
+});
