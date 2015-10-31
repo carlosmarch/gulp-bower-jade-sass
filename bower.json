@@ -1,10 +1,8 @@
 {
-  "name": "bower-gulp-html5-sass-jade-boilerplate",
-  "version": "0.0.0",
-  "authors": [
-    "cmarch <carlosmarchinfo@gmail.com>"
-  ],
-  "description": "Testing things",
+  "name": "gulp-bower-jade-sass",
+  "version": "1.0.0",
+  "description": "Skeleton using gulp bower jade & sass",
+  "author": "Carlos March <carlosmarchinfo@gmail.com>",
   "license": "MIT",
   "ignore": [
     "**/.*",
